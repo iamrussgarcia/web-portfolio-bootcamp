@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Russ Peter Garcia — Full Stack Web Developer and Software Engineer. Projects, tools, and contact.">
+	<title>Russ Peter Garcia | Portflix</title>
+
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+	<!-- Bootstrap + Bootstrap Icons -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+	<link rel="preload" as="image" href="images/hero.webp">
+	<link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+	<!-- ============ NAVBAR ============ -->
+	<nav class="navbar navbar-expand fixed-top site-nav" id="siteNav" aria-label="Main navigation">
+		<div class="container-xl">
+			<a class="navbar-brand brand" href="#landing">Portflix</a>
+
+			<ul class="navbar-nav me-auto d-none d-md-flex nav-links">
+				<li class="nav-item"><a class="nav-link active" href="#landing" data-section="landing">Home</a></li>
+				<li class="nav-item"><a class="nav-link" href="#projects" data-section="projects">Projects</a></li>
+				<li class="nav-item"><a class="nav-link" href="#tools" data-section="tools">Tools</a></li>
+				<li class="nav-item"><a class="nav-link" href="#contact" data-section="contact">Contact</a></li>
+			</ul>
+
+			<div class="d-flex align-items-center gap-3 ms-auto">
+				<div class="nav-search" id="navSearch">
+					<button type="button" class="nav-icon search-toggle" id="searchToggle" aria-label="Search this page" aria-expanded="false" aria-controls="searchInput">
+						<i class="bi bi-search"></i>
+					</button>
+					<input type="search" class="search-input" id="searchInput" placeholder="Projects, tools, sections..." autocomplete="off" role="combobox" aria-label="Search projects, tools, and sections" aria-expanded="false" aria-controls="searchResults" aria-autocomplete="list">
+					<button type="button" class="search-clear" id="searchClear" aria-label="Close search"><i class="bi bi-x-lg"></i></button>
+					<ul class="search-results" id="searchResults" role="listbox" aria-label="Search results"></ul>
+				</div>
+				<img src="images/avatar.webp" alt="Russ Peter Garcia" class="nav-avatar" width="32" height="32">
+			</div>
+		</div>
+	</nav>
+
+	<main>
+		<!-- ============ LANDING / HERO ============ -->
+		<section id="landing" class="hero">
+			<div class="hero-scrim"></div>
+			<div class="container-xl hero-content">
+				<div class="hero-kicker">
+					<span class="badge-red">Portflix Original</span>
+					<span class="kicker-text">Software Engineer's Cut</span>
+				</div>
+
+				<h1 class="hero-name">Russ Peter Garcia</h1>
+				<p class="hero-title">
+					<span class="hero-role" id="full-stack">Full Stack Web Developer</span>
+					<span class="hero-divider">&amp;</span>
+					<span class="hero-role" id="software-engineer">Software Engineer</span>
+				</p>
+
+				<div class="hero-meta">
+					<span class="meta-match">Now Streaming</span>
+					<span class="chip-outline">MERN</span>
+					<span class="chip-outline">Laravel</span>
+					<span class="chip-outline">Vue.js</span>
+					<span class="chip-outline chip-gold"><i class="bi bi-trophy-fill"></i> Best Capstone 1st Runner-Up</span>
+				</div>
+
+				<p class="hero-desc">
+					I build full-stack web applications end to end — from RESTful APIs and role-based dashboards to booking engines, CMS platforms, and offline-first PWAs. Every release on this page ships with secure authentication, real data, and a UI people actually enjoy using.
+				</p>
+
+				<div class="hero-cta">
+					<a href="#projects" class="btn btn-play"><i class="bi bi-play-fill"></i> Play Reel / View Work</a>
+					<a href="#contact" class="btn btn-info-glass"><i class="bi bi-info-circle"></i> Spec Sheet &amp; Direct Hire</a>
+				</div>
+			</div>
+
+			<div class="container-xl">
+				<div class="status-banner">
+					<span class="status-dot"></span>
+					<span class="status-text">Available for Full-Time &amp; Freelance Roles • Remote / Hybrid</span>
+					<span class="status-tag">Open</span>
+				</div>
+			</div>
+		</section>
+
+		<!-- ============ PROJECTS ============ -->
+		<section id="projects" class="section-block">
+			<div class="container-xl">
+				<div class="shelf-head">
+					<div>
+						<p class="eyebrow"><span class="text-red">Streaming Charts</span> • Client &amp; Capstone</p>
+						<h2 class="section-title">Top Projects This Week <i class="bi bi-graph-up-arrow text-red"></i></h2>
+					</div>
+					<div class="shelf-arrows d-none d-md-flex">
+						<button class="shelf-btn" type="button" data-shelf="featured" data-dir="-1" aria-label="Scroll left"><i class="bi bi-chevron-left"></i></button>
+						<button class="shelf-btn" type="button" data-shelf="featured" data-dir="1" aria-label="Scroll right"><i class="bi bi-chevron-right"></i></button>
+					</div>
+				</div>
+			</div>
+			<div class="shelf-track" id="shelf-featured" data-shelf-track="featured"></div>
+
+			<div class="container-xl">
+				<div class="shelf-head mt-5">
+					<div>
+						<p class="eyebrow"><span class="text-red">Bootcamp</span> • Full Stack Releases</p>
+						<h2 class="section-title">Bootcamp Releases</h2>
+					</div>
+					<div class="shelf-arrows d-none d-md-flex">
+						<button class="shelf-btn" type="button" data-shelf="bootcamp" data-dir="-1" aria-label="Scroll left"><i class="bi bi-chevron-left"></i></button>
+						<button class="shelf-btn" type="button" data-shelf="bootcamp" data-dir="1" aria-label="Scroll right"><i class="bi bi-chevron-right"></i></button>
+					</div>
+				</div>
+			</div>
+			<div class="shelf-track" id="shelf-bootcamp" data-shelf-track="bootcamp"></div>
+
+			<div class="container-xl">
+				<p class="swipe-hint d-md-none">Swipe <i class="bi bi-arrow-right"></i></p>
+			</div>
+		</section>
+
+		<!-- ============ TOOLS ============ -->
+		<section id="tools" class="section-block">
+			<div class="container-xl">
+				<div class="shelf-head">
+					<div>
+						<p class="eyebrow"><span class="text-red">Dev Runtime</span> • Active Stack</p>
+						<h2 class="section-title">Continue Watching: My Toolkit <i class="bi bi-terminal"></i></h2>
+					</div>
+					<p class="sessions-online d-none d-md-block">23 tools online</p>
+				</div>
+
+				<div class="filter-row" role="group" aria-label="Filter tools by category">
+					<button type="button" class="filter-chip active" data-filter="all">All</button>
+					<button type="button" class="filter-chip" data-filter="frontend">Frontend</button>
+					<button type="button" class="filter-chip" data-filter="backend">Backend</button>
+					<button type="button" class="filter-chip" data-filter="languages">Languages</button>
+					<button type="button" class="filter-chip" data-filter="databases">Databases</button>
+					<button type="button" class="filter-chip" data-filter="devtools">Dev Tools</button>
+				</div>
+
+				<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+					<!-- Frontend -->
+					<div class="col tool-group" data-category="frontend">
+						<article class="terminal">
+							<header class="terminal-bar">
+								<span class="dots"><i></i><i></i><i></i></span>
+								<span class="terminal-file">frontend.jsx</span>
+								<span class="stage stage-red">Stage: UI</span>
+							</header>
+							<p class="terminal-cmd"><span class="text-red">&gt;</span> npm run dev --frontend</p>
+							<h3 class="terminal-title">Frontend</h3>
+							<ul class="tool-grid">
+								<li class="tool-tile"><img src="images/tools/html.webp" alt="" width="40" height="40" loading="lazy"><span>HTML</span></li>
+								<li class="tool-tile"><img src="images/tools/css.webp" alt="" width="40" height="40" loading="lazy"><span>CSS</span></li>
+								<li class="tool-tile"><img src="images/tools/javascript.webp" alt="" width="40" height="40" loading="lazy"><span>JavaScript</span></li>
+								<li class="tool-tile"><img src="images/tools/bootstrap.webp" alt="" width="40" height="40" loading="lazy"><span>Bootstrap</span></li>
+								<li class="tool-tile"><img src="images/tools/materialize.webp" alt="" width="40" height="40" loading="lazy"><span>Materialize</span></li>
+								<li class="tool-tile"><img src="images/tools/tailwind.webp" alt="" width="40" height="40" loading="lazy"><span>Tailwind</span></li>
+								<li class="tool-tile"><img src="images/tools/react.webp" alt="" width="40" height="40" loading="lazy"><span>React</span></li>
+								<li class="tool-tile"><img src="images/tools/vuejs.webp" alt="" width="40" height="40" loading="lazy"><span>VueJS</span></li>
+							</ul>
+							<div class="terminal-progress"><span>Build status</span><span>8 packages</span></div>
+							<div class="progress-bar-track"><div class="progress-fill"></div></div>
+						</article>
+					</div>
+
+					<!-- Backend -->
+					<div class="col tool-group" data-category="backend">
+						<article class="terminal">
+							<header class="terminal-bar">
+								<span class="dots"><i></i><i></i><i></i></span>
+								<span class="terminal-file">server.js</span>
+								<span class="stage stage-green">Stage: API</span>
+							</header>
+							<p class="terminal-cmd"><span class="text-red">&gt;</span> node server.js --port=4000</p>
+							<h3 class="terminal-title">Backend &amp; Runtime</h3>
+							<ul class="tool-grid">
+								<li class="tool-tile"><img src="images/tools/nodejs.webp" alt="" width="40" height="40" loading="lazy"><span>NodeJS</span></li>
+								<li class="tool-tile"><img src="images/tools/express.webp" alt="" width="40" height="40" loading="lazy" class="logo-invert"><span>Express</span></li>
+								<li class="tool-tile"><img src="images/tools/laravel.webp" alt="" width="40" height="40" loading="lazy"><span>Laravel</span></li>
+								<li class="tool-tile"><img src="images/tools/dotnet.svg" alt="" width="40" height="40" loading="lazy"><span>.NET</span></li>
+							</ul>
+							<div class="terminal-progress"><span>Server status</span><span>4 runtimes</span></div>
+							<div class="progress-bar-track"><div class="progress-fill"></div></div>
+						</article>
+					</div>
+
+					<!-- Languages -->
+					<div class="col tool-group" data-category="languages">
+						<article class="terminal">
+							<header class="terminal-bar">
+								<span class="dots"><i></i><i></i><i></i></span>
+								<span class="terminal-file">main.cpp</span>
+								<span class="stage stage-blue">Stage: Core</span>
+							</header>
+							<p class="terminal-cmd"><span class="text-red">&gt;</span> g++ main.cpp &amp;&amp; dotnet run</p>
+							<h3 class="terminal-title">Languages</h3>
+							<ul class="tool-grid">
+								<li class="tool-tile"><img src="images/tools/csharp.webp" alt="" width="40" height="40" loading="lazy"><span>C#</span></li>
+								<li class="tool-tile"><img src="images/tools/cpp.webp" alt="" width="40" height="40" loading="lazy"><span>C++</span></li>
+								<li class="tool-tile"><img src="images/tools/php.webp" alt="" width="40" height="40" loading="lazy"><span>PHP</span></li>
+								<li class="tool-tile"><img src="images/tools/java.webp" alt="" width="40" height="40" loading="lazy"><span>Java</span></li>
+							</ul>
+							<div class="terminal-progress"><span>Compile status</span><span>4 languages</span></div>
+							<div class="progress-bar-track"><div class="progress-fill"></div></div>
+						</article>
+					</div>
+
+					<!-- Databases -->
+					<div class="col tool-group" data-category="databases">
+						<article class="terminal">
+							<header class="terminal-bar">
+								<span class="dots"><i></i><i></i><i></i></span>
+								<span class="terminal-file">schema.sql</span>
+								<span class="stage stage-gold">Stage: Data</span>
+							</header>
+							<p class="terminal-cmd"><span class="text-red">&gt;</span> db.connect() // 3 engines</p>
+							<h3 class="terminal-title">Databases</h3>
+							<ul class="tool-grid">
+								<li class="tool-tile"><img src="images/tools/mongodb.webp" alt="" width="40" height="40" loading="lazy" class="logo-pad"><span>MongoDB</span></li>
+								<li class="tool-tile"><img src="images/tools/mysql.webp" alt="" width="40" height="40" loading="lazy"><span>MySQL</span></li>
+								<li class="tool-tile"><img src="images/tools/postgresql.webp" alt="" width="40" height="40" loading="lazy"><span>PostgreSQL</span></li>
+							</ul>
+							<div class="terminal-progress"><span>Connection pool</span><span>3 engines</span></div>
+							<div class="progress-bar-track"><div class="progress-fill"></div></div>
+						</article>
+					</div>
+
+					<!-- Dev Tools -->
+					<div class="col tool-group" data-category="devtools">
+						<article class="terminal">
+							<header class="terminal-bar">
+								<span class="dots"><i></i><i></i><i></i></span>
+								<span class="terminal-file">workflow.sh</span>
+								<span class="stage stage-red">Stage: Ship</span>
+							</header>
+							<p class="terminal-cmd"><span class="text-red">&gt;</span> git push origin main</p>
+							<h3 class="terminal-title">Dev Tools</h3>
+							<ul class="tool-grid">
+								<li class="tool-tile"><img src="images/tools/git.webp" alt="" width="40" height="40" loading="lazy" class="logo-pad"><span>Git</span></li>
+								<li class="tool-tile"><span class="tool-icon-fallback"><i class="bi bi-send-fill"></i></span><span>Postman</span></li>
+								<li class="tool-tile"><img src="images/tools/vscode.webp" alt="" width="40" height="40" loading="lazy"><span>VSCode</span></li>
+								<li class="tool-tile"><img src="images/tools/sublime.webp" alt="" width="40" height="40" loading="lazy"><span>Sublime</span></li>
+								<li class="tool-tile"><img src="images/tools/claude-code.webp" alt="" width="40" height="40" loading="lazy"><span>Claude Code</span></li>
+							</ul>
+							<div class="terminal-progress"><span>Workflow status</span><span>5 tools</span></div>
+							<div class="progress-bar-track"><div class="progress-fill"></div></div>
+						</article>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ============ CONTACT ============ -->
+		<section id="contact" class="section-block">
+			<div class="container-xl">
+				<div class="contact-panel">
+					<div class="row g-4 g-lg-5 align-items-start">
+						<div class="col-lg-6">
+							<p class="eyebrow"><span class="badge-red">Episode / Dispatch</span> • Direct Transmission</p>
+							<h2 class="contact-title">Direct Stream // Production Inquiries</h2>
+							<p class="contact-lead">
+								Have a product to build, an API to document, or a dashboard to ship? Send a brief and let's talk about your next release.
+							</p>
+
+							<div class="profile-card">
+								<img src="images/avatar.webp" alt="Russ Peter Garcia" width="56" height="56" loading="lazy">
+								<div>
+									<p class="profile-status"><span class="status-dot"></span> Available for new engagements</p>
+									<p class="profile-name">Russ Peter Garcia — Software Engineer</p>
+									<p class="profile-loc">Metro Manila / Remote Worldwide</p>
+								</div>
+							</div>
+
+							<div class="row g-3 mt-1">
+								<div class="col-6">
+									<div class="mini-card">
+										<p class="mini-label">Open To</p>
+										<p class="mini-value">Full-Time</p>
+										<p class="mini-sub text-green"><i class="bi bi-check2"></i> Freelance too</p>
+									</div>
+								</div>
+								<div class="col-6">
+									<div class="mini-card">
+										<p class="mini-label">Work Setup</p>
+										<p class="mini-value">Remote</p>
+										<p class="mini-sub text-blue"><i class="bi bi-lightning-charge-fill"></i> Hybrid ready</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-6">
+							<form class="contact-form" id="contactForm" novalidate>
+								<div class="form-head">
+									<h3 class="form-title">Stream Contact Session</h3>
+									<span class="form-tls">TLS 1.3 // Encrypted</span>
+								</div>
+
+								<div class="row g-3">
+									<div class="col-md-6">
+										<label for="cfName" class="form-label">Your Name / Organization</label>
+										<input type="text" class="form-control" id="cfName" name="name" placeholder="e.g. Juan Dela Cruz, Acme Inc." required minlength="2">
+										<div class="invalid-feedback">Please enter your name.</div>
+									</div>
+									<div class="col-md-6">
+										<label for="cfEmail" class="form-label">Contact Channel</label>
+										<input type="email" class="form-control" id="cfEmail" name="email" placeholder="name@company.com" required>
+										<div class="invalid-feedback">Please enter a valid email.</div>
+									</div>
+									<div class="col-md-6">
+										<label for="cfScope" class="form-label">Production Scope</label>
+										<select class="form-select" id="cfScope" name="scope" required>
+											<option value="" selected disabled>Select a scope</option>
+											<option>Full Stack Web App</option>
+											<option>Frontend / UI Build</option>
+											<option>Backend / REST API</option>
+											<option>Full-Time Role</option>
+										</select>
+										<div class="invalid-feedback">Please choose a scope.</div>
+									</div>
+									<div class="col-md-6">
+										<label for="cfTimeline" class="form-label">Target Release Window</label>
+										<select class="form-select" id="cfTimeline" name="timeline">
+											<option>Immediate</option>
+											<option>Within 1 month</option>
+											<option>1–3 months</option>
+											<option>Flexible</option>
+										</select>
+									</div>
+									<div class="col-12">
+										<label for="cfMessage" class="form-label">Mission Brief &amp; Stack Requirements</label>
+										<textarea class="form-control" id="cfMessage" name="message" rows="4" placeholder="Outline deliverables, timeline, and tech stack constraints..." required minlength="10"></textarea>
+										<div class="invalid-feedback">Please write at least 10 characters.</div>
+									</div>
+									<div class="col-12">
+										<button type="submit" class="btn btn-transmit w-100"><i class="bi bi-send-fill"></i> Transmit Mission Brief</button>
+									</div>
+								</div>
+
+								<div class="alert form-success d-none mt-3 mb-0" id="formSuccess" role="status">
+									<i class="bi bi-check-circle-fill"></i> Transmission received! Thanks — I'll get back to you soon.
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<!-- ============ FOOTER ============ -->
+	<footer class="site-footer">
+		<div class="container-xl">
+			<p class="footer-brand"><span class="brand">Portflix</span> <span class="footer-sub">Portfolio of Russ Peter Garcia</span></p>
+			<ul class="footer-links">
+				<li><a href="#landing">Home</a></li>
+				<li><a href="#projects">Projects</a></li>
+				<li><a href="#tools">Tools</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+			<div class="footer-bottom">
+				<span class="service-code">Service Code: RPG-2026</span>
+				<span>&copy; <span id="year">2026</span> Russ Peter Garcia. All rights reserved.</span>
+			</div>
+		</div>
+	</footer>
+
+	<!-- ============ PHONE BOTTOM TAB BAR ============ -->
+	<nav class="tabbar d-md-none" aria-label="Section navigation">
+		<a href="#landing" class="tab active" data-section="landing"><i class="bi bi-house-door-fill"></i><span>Home</span></a>
+		<a href="#projects" class="tab" data-section="projects"><i class="bi bi-collection-play-fill"></i><span>Projects</span></a>
+		<a href="#tools" class="tab" data-section="tools"><i class="bi bi-tools"></i><span>Tools</span></a>
+		<a href="#contact" class="tab" data-section="contact"><i class="bi bi-envelope-fill"></i><span>Contact</span></a>
+	</nav>
+
+	<!-- ============ PROJECT MODAL ============ -->
+	<div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-lg modal-fullscreen-sm-down">
+			<div class="modal-content">
+				<div class="modal-poster" id="modalPoster">
+					<img id="modalImage" src="images/hero.webp" alt="" class="d-none">
+					<p class="poster-title d-none" id="modalPosterTitle"></p>
+					<button type="button" class="btn-close btn-close-white modal-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div class="modal-meta">
+						<span class="badge-red" id="modalTag"></span>
+						<span class="meta-match" id="modalShelf"></span>
+					</div>
+					<h3 class="modal-title-text" id="projectModalTitle"></h3>
+					<p class="modal-tagline" id="modalTagline"></p>
+					<p class="modal-desc" id="modalDesc"></p>
+					<ul class="stack-list" id="modalStack"></ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="index.js"></script>
+</body>
+</html>
