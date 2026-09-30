@@ -329,6 +329,27 @@ p {
 	object-fit: cover;
 }
 
+.resume-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+	height: 32px;
+	padding: 0 0.85rem;
+	background: var(--red);
+	color: #fff;
+	font-size: 0.85rem;
+	font-weight: 600;
+	text-decoration: none;
+	border-radius: var(--radius);
+	transition: background 0.2s ease;
+}
+
+.resume-btn:hover,
+.resume-btn:focus-visible {
+	background: var(--red-dark);
+	color: #fff;
+}
+
 /* ---------- Hero / Landing ---------- */
 .hero {
 	position: relative;
