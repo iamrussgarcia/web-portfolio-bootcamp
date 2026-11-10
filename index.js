@@ -80,6 +80,8 @@ const projects = [
 		tag: "API Docs",
 		tagline: "Dynamic E-Commerce Workflow Management",
 		description: "Dynamic E Commerce Workflow Management. The system features dynamic routes for order processing, real time inventory updates, and secure user authentication. It also supports seamless automated order reporting and comprehensive product management. Documented Backend API published publicly using Postman.",
+			link: "https://documenter.getpostman.com/view/58907583/2sBYHUSzkW",
+			linkLabel: "View API Docs",
 		stack: ["REST API", "Auth", "Postman"]
 	},
 	{
@@ -89,6 +91,8 @@ const projects = [
 		tag: "API Docs",
 		tagline: "RESTful API for managing course enrollments",
 		description: "RESTful API for managing course enrollments, featuring user registration, authentication, and retrieval of user details. Supports course creation, updates, archiving activation, and student enrollment. Publicly documented using Postman.",
+			link: "https://documenter.getpostman.com/view/58907583/2sBYHYvJ4h",
+			linkLabel: "View API Docs",
 		stack: ["REST API", "Auth", "Postman"]
 	},
 	{
@@ -107,6 +111,8 @@ const projects = [
 		tag: "MERN",
 		tagline: "MERN E-Commerce Platform",
 		description: "MERN E-Commerce Platform. The platform features dynamic product catalog with filtering and sorting, real-time search, seamless cart updates, secure checkout, and a comprehensive admin dashboard with real-time analytics and user management capabilities.",
+			link: "http://zuitt-bootcamp-prod-645-10069-garcia.s3-website.us-east-1.amazonaws.com/games",
+			linkLabel: "Visit Live App",
 		stack: ["MongoDB", "Express", "React", "Node.js"]
 	},
 	{
@@ -301,6 +307,16 @@ function initModal() {
 
 		const stackHolder = document.getElementById("modalStack");
 		stackHolder.replaceChildren.apply(stackHolder, Array.from(buildStack(project.stack).children));
+
+		const linkEl = document.getElementById("modalLink");
+		if (project.link) {
+			linkEl.href = project.link;
+			linkEl.querySelector("span").textContent = project.linkLabel || "Visit Project";
+			linkEl.classList.remove("d-none");
+		} else {
+			linkEl.classList.add("d-none");
+			linkEl.removeAttribute("href");
+		}
 
 		modal.show();
 	});
